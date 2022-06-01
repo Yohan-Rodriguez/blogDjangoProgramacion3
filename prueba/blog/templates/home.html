@@ -1,0 +1,19 @@
+5:40 p. m. 1/06/2022<!-- templates /home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+	</br>
+	{% for post in object_list %}
+		<div class="post-entry">
+			<li><a href="{% url 'post_detail' post.pk %}">
+			{{ post.author }}</a> - 
+			{{ post.title }} -
+			<small>
+			<a href="{% url 'post_edit' post.pk %}"> (Editar) </a>
+			<a href="{% url 'post_delete' post.pk %}"> (Eliminar) </a>
+			</small> <br/>
+			</a>
+			{{ post.body }}</li>
+		</div>
+	{% endfor %}
+{% endblock content %}

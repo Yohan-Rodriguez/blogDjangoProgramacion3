@@ -1,0 +1,15 @@
+ <!-- templates /post_delete.html -->
+
+
+{% block content %}
+	<h1>Eliminar post</h1>
+
+	<h3>Borrar: {{ post.title }}</h3>
+	
+	<form method="post">
+		{% csrf_token %}
+		<strong> ¿Estás seguro?	</strong>	
+		<br/><br/>
+		<button class="btn btn-secondary"> Eliminar</button>
+	</form>
+{% endblock content %}
